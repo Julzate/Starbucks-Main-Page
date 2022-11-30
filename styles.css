@@ -186,9 +186,12 @@ ul{
     margin-right: auto;    
 }
 .terms-text{
+    padding: 0 50px;
     max-width: 720px;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 auto;    
+    font-weight: 400;
+    font-size: 14px;
 }
 /* Grid styles  */
 
@@ -265,24 +268,24 @@ ul{
 
 /*Footer*/
 
-.footer{
-    width: 100%;
-    max-width: 1440px;
-
-
-    margin-left: auto;
-    margin-right: auto;
+.footer{   
     box-shadow: 0 -1px 3px rgb(0 0 0 / 10%), 0 -2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%);
+    padding-left: 10px;
 }
 
 .flex-container{
+    display: flex;    
+    max-width: 1440px;      
     text-align: start;
     padding-top: 30px;
     margin-left: auto;
     margin-right: auto;      
+    padding-bottom: 15px;
+
 }
 
 .column-content{   
+    display: block;
     margin-left: 0;
     margin-right: 50px;
     width: 190px;
@@ -308,19 +311,65 @@ ul{
     color: var(--color-dark-gray);
 }
 
+/* Mobile footer */
+
+.mobile-footer-container{
+    display: none;    
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    height: 0px;
+    opacity: 0;
+    pointer-events: none;    
+    padding-left: 10px;
+    transition: opacity 150ms ease-in-out;
+}   
+
+.active .dropdown-menu{
+    height: auto;        
+    opacity: 1;
+    pointer-events: auto;   
+}
+
+.active .arrow{
+    transform: rotate(180deg);
+    transform-origin: center;    
+}
+
+.mobile-header{    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding-right: 15px;
+    padding-left: 10px;
+    
+}
+.mobile-header h2{
+    color:var(--color-dark-gray)
+}
+
+.arrow{    
+    width: 30px;
+    height: 30px;
+    transition: all .2s ease-in-out;
+}
+
+
 /*Footer social*/
 
 hr{
-    opacity: 0.6;
-    width: 77%;    
-    color: var(--color-ligt-gray);
-    border-top: 5px solid rgba(0, 0, 0, .1); 
-    height: 3px;
-    border-width: 3px;
-    border-bottom: 0;
-    border-left: 0;
-    border-right: 0;
-    margin: 40px auto;   
+    align-items: center;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .social{
@@ -344,6 +393,33 @@ hr{
     width: 32px;
     height: 32px;    
 }
+
+
+.bottom-footer{    
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;     
+}
+
+.bottom-footer li{
+    padding: 6px;    
+}
+
+.bottom-list-items{
+    text-decoration: none; 
+    border-right: 1px;
+    color: var(--color-ligt-gray);
+}
+
+.bottom-list-items:hover{
+    text-decoration: underline; 
+}
+
+.copyright{    
+    color: var(--color-ligt-gray);
+    margin-bottom: 10px;
+}
+
 
 /* Hanburger Menu */
 
@@ -461,6 +537,8 @@ hr{
     .text-md{
         font-size: 19px;
     }
+
+    
 }
 
 @media(max-width:768px){
@@ -479,7 +557,15 @@ hr{
     .navbar-right{
         display: none!important;
     }  
-
+    .column-content{
+        display: none;
+    }
+    .mobile-footer-container{
+        display: block;
+    }
+    .flex-container{
+        padding-bottom: 0;
+    }
 
 }
 
@@ -492,6 +578,7 @@ hr{
     hr{
         width: 75%;
     }
+    
 }
 
 
