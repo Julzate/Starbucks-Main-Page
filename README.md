@@ -1,1 +1,1 @@
-# Starbucks-clone Create using HTML, CSS and Javascript
+# Starbucks Main Page Created using HTML, CSS and Javascript
